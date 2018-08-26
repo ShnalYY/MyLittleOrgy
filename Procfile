@@ -1,0 +1,1 @@
+worker: java -jar target/MyLittleOrgy-1.0-SNAPSHOT.jar
