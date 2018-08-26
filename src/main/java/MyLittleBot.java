@@ -1,5 +1,5 @@
 
-import jdk.jfr.Description;
+//import jdk.jfr.Description;
 import org.telegram.telegrambots.facilities.TelegramHttpClientBuilder;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.api.methods.AnswerCallbackQuery;
@@ -447,7 +447,7 @@ public class MyLittleBot extends TelegramLongPollingBot {
     }
 
 
-    @Description("Кнопки  в вікні")
+    //@Description("Кнопки  в вікні")
     public synchronized ReplyKeyboardMarkup setButtons() {
         // Создаем клавиуатуру
         ReplyKeyboardMarkup replyKeyboardMarkup = new ReplyKeyboardMarkup();
@@ -525,7 +525,7 @@ public class MyLittleBot extends TelegramLongPollingBot {
 
     }
 
-    @Description("Вспливаюче вікно у відповідь на вибір")
+    // @Description("Вспливаюче вікно у відповідь на вибір")
     public synchronized void answerCallbackQuery(String callbackId, String message) {
         AnswerCallbackQuery answer = new AnswerCallbackQuery();
         answer.setCallbackQueryId(callbackId);
