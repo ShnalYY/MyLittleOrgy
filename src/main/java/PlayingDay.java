@@ -13,15 +13,15 @@ public class PlayingDay {
     ArrayList<Long> listOfUsersOnEvening;
 
 
-    public PlayingDay(String name, String onMorning, String onAfternoon, String onEvening) {
+    private PlayingDay(String name, String onMorning, String onAfternoon, String onEvening) {
 
         this.name = name;
         this.onMorning = onMorning;
         this.onAfternoon = onAfternoon;
         this.onEvening = onEvening;
-        this.listOfUsersOnMorning = new ArrayList<Long>();
-        this.listOfUsersOnAfternoon = new ArrayList<Long>();
-        this.listOfUsersOnEvening = new ArrayList<Long>();
+        this.listOfUsersOnMorning = new ArrayList<>();
+        this.listOfUsersOnAfternoon = new ArrayList<>();
+        this.listOfUsersOnEvening = new ArrayList<>();
     }
 
 
@@ -87,7 +87,7 @@ public class PlayingDay {
 
     static public ArrayList<PlayingDay> getPlayingDays(String... days) {
 
-        ArrayList<PlayingDay> neededDays = new ArrayList<PlayingDay>();
+        ArrayList<PlayingDay> neededDays = new ArrayList<>();
 
         for (String day : days) {
             if (day.equals("default"))

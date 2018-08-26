@@ -37,8 +37,8 @@ public class MyLittleBot extends TelegramLongPollingBot {
     // Запис таблиць - переробити в БД або xml
     private HashMap<Long, ArrayList<PlayingDay>> mainMap = new HashMap<>();
     //ArrayList<PlayingDay> playingDays = new ArrayList<>();
-    int tableMessage = 0;
-    int commandMessage = 0;
+    private int tableMessage = 0;
+    private int commandMessage = 0;
 
     /**
      * Метод для приема сообщений.
@@ -86,7 +86,7 @@ public class MyLittleBot extends TelegramLongPollingBot {
                 //System.out.println(update.getMessage().getMessageId());
                 // Якщо чат не має таблиці, створюєм її
                 if (!mainMap.containsKey(chat_id))
-                    mainMap.putIfAbsent(chat_id, new ArrayList<PlayingDay>());
+                    mainMap.putIfAbsent(chat_id, new ArrayList<>());
 
                 // Запамятовуєм ID повідомлення команди. При надходженні повторної, стару затираєм
                 if (commandMessage == 0)
@@ -483,7 +483,7 @@ public class MyLittleBot extends TelegramLongPollingBot {
     }
 
 
-    public synchronized InlineKeyboardMarkup setInlineButtons(ArrayList<PlayingDay> listOfDays) {
+    private synchronized InlineKeyboardMarkup setInlineButtons(ArrayList<PlayingDay> listOfDays) {
 
         InlineKeyboardMarkup markupInline = new InlineKeyboardMarkup();
         List<List<InlineKeyboardButton>> rowsInline = new ArrayList<>();
